@@ -1,0 +1,411 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,0,51,0.12), transparent 20%),
+        radial-gradient(circle at 85% 30%, rgba(0,102,255,0.12), transparent 20%),
+        radial-gradient(circle at 60% 70%, rgba(187,0,255,0.10), transparent 20%),
+        #050505;
+
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+/* ===================================
+   PAGE
+=================================== */
+
+.events-page{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 30px;
+    min-height:100vh;
+}
+
+/* ===================================
+   SPIDER WEB TOP LEFT
+=================================== */
+
+.events-page::before{
+    content:"";
+    position:fixed;
+
+    top:-180px;
+    left:-180px;
+
+    width:600px;
+    height:600px;
+
+    border-radius:50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            rgba(255,255,255,0.15) 0px,
+            rgba(255,255,255,0.15) 2px,
+            transparent 2px,
+            transparent 45px
+        ),
+        repeating-conic-gradient(
+            rgba(255,255,255,0.12) 0deg,
+            rgba(255,255,255,0.12) 2deg,
+            transparent 2deg,
+            transparent 20deg
+        );
+
+    opacity:.20;
+    transform:rotate(15deg);
+    z-index:-2;
+}
+
+/* ===================================
+   SPIDER WEB BOTTOM RIGHT
+=================================== */
+
+.events-page::after{
+    content:"";
+    position:fixed;
+
+    bottom:-220px;
+    right:-220px;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            rgba(255,255,255,0.15) 0px,
+            rgba(255,255,255,0.15) 2px,
+            transparent 2px,
+            transparent 45px
+        ),
+        repeating-conic-gradient(
+            rgba(255,255,255,0.12) 0deg,
+            rgba(255,255,255,0.12) 2deg,
+            transparent 2deg,
+            transparent 20deg
+        );
+
+    opacity:.20;
+    transform:rotate(-20deg);
+    z-index:-2;
+}
+
+/* ===================================
+   TITLE
+=================================== */
+
+.events-header{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:70px;
+}
+
+.events-title{
+    width:100%;
+    text-align:center;
+
+    font-size:4rem;
+    font-weight:900;
+    letter-spacing:4px;
+
+    background:linear-gradient(
+        90deg,
+        #ff0033,
+        #bb00ff,
+        #0066ff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    text-shadow:
+        0 0 15px rgba(255,0,51,.7),
+        0 0 30px rgba(0,102,255,.7);
+
+    margin:0 auto;
+}
+
+/* ===================================
+   CATEGORY HEADINGS
+=================================== */
+
+.technical-heading,
+.semi-heading,
+.literary-heading{
+    font-size:2rem;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:25px;
+}
+
+.technical-heading{
+    color:#ff0033;
+}
+
+.semi-heading{
+    color:#bb00ff;
+}
+
+.literary-heading{
+    color:#0066ff;
+}
+
+/* ===================================
+   GRID
+=================================== */
+
+.event-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-bottom:60px;
+}
+
+/* ===================================
+   CARD
+=================================== */
+
+.event-card{
+    width:320px;
+    min-height:220px;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+    flex-direction:column;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.event-card:hover{
+    transform:
+        translateY(-10px)
+        scale(1.03);
+}
+
+.event-card h3{
+    font-size:1.7rem;
+    margin-bottom:15px;
+}
+
+.event-card p{
+    color:#d0d0d0;
+    margin-bottom:25px;
+    flex-grow:1;
+}
+
+/* ===================================
+   TECHNICAL
+=================================== */
+
+.event-card.technical{
+    border:2px solid #ff0033;
+
+    background:
+        rgba(255,0,51,.08);
+
+    box-shadow:
+        0 0 20px rgba(255,0,51,.35),
+        inset 0 0 30px rgba(255,0,51,.08);
+}
+
+.event-card.technical:hover{
+    box-shadow:
+        0 0 35px rgba(255,0,51,.8);
+}
+
+/* ===================================
+   SEMI
+=================================== */
+
+.event-card.semi{
+    border:2px solid #bb00ff;
+
+    background:
+        rgba(187,0,255,.08);
+
+    box-shadow:
+        0 0 20px rgba(187,0,255,.35),
+        inset 0 0 30px rgba(187,0,255,.08);
+}
+
+.event-card.semi:hover{
+    box-shadow:
+        0 0 35px rgba(187,0,255,.8);
+}
+
+/* ===================================
+   LITERARY
+=================================== */
+
+.event-card.literary{
+    border:2px solid #0066ff;
+
+    background:
+        rgba(0,102,255,.08);
+
+    box-shadow:
+        0 0 20px rgba(0,102,255,.35),
+        inset 0 0 30px rgba(0,102,255,.08);
+}
+
+.event-card.literary:hover{
+    box-shadow:
+        0 0 35px rgba(0,102,255,.8);
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.event-card button{
+    padding:12px 20px;
+
+    border:none;
+    border-radius:10px;
+
+    color:white;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+}
+
+.event-card button:hover{
+    transform:
+        translateY(-2px)
+        scale(1.05);
+}
+
+/* TECH */
+
+.event-card.technical button{
+    background:
+        linear-gradient(
+            45deg,
+            #ff0033,
+            #ff5c7c
+        );
+
+    box-shadow:
+        0 0 15px rgba(255,0,51,.5);
+}
+
+/* SEMI */
+
+.event-card.semi button{
+    background:
+        linear-gradient(
+            45deg,
+            #bb00ff,
+            #dd66ff
+        );
+
+    box-shadow:
+        0 0 15px rgba(187,0,255,.5);
+}
+
+/* LITERARY */
+
+.event-card.literary button{
+    background:
+        linear-gradient(
+            45deg,
+            #0066ff,
+            #33a1ff
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,102,255,.5);
+}
+
+/* ===================================
+   CITY SKYLINE
+=================================== */
+
+.city-skyline{
+    position:fixed;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:220px;
+
+    background:#111;
+
+    clip-path:polygon(
+        0% 100%,
+        0% 65%,
+        5% 65%,
+        5% 40%,
+        10% 40%,
+        10% 75%,
+        18% 75%,
+        18% 25%,
+        24% 25%,
+        24% 80%,
+        35% 80%,
+        35% 15%,
+        42% 15%,
+        42% 65%,
+        55% 65%,
+        55% 20%,
+        62% 20%,
+        62% 75%,
+        75% 75%,
+        75% 10%,
+        82% 10%,
+        82% 50%,
+        90% 50%,
+        90% 35%,
+        100% 35%,
+        100% 100%
+    );
+
+    opacity:.95;
+
+    z-index:-3;
+    pointer-events:none;
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .events-title{
+        font-size:3rem;
+    }
+
+    .event-grid{
+        justify-content:center;
+    }
+
+    .event-card{
+        width:100%;
+        max-width:320px;
+    }
+}
