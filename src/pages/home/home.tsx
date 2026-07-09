@@ -6,21 +6,26 @@ function Home() {
     <div className="home">
       <div className="red-glow"></div>
       <div className="blue-glow"></div>
-      <div className="particles"></div>
 
-      <div className="particles-container">
-  {[...Array(40)].map((_, i) => (
-    <span
-      key={i}
-      className="particle"
-      style={{
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 10}s`,
-        animationDuration: `${6 + Math.random() * 8}s`,
-      }}
-    />
-  ))}
-</div>
+      <div className="web top-left"></div>
+      <div className="web bottom-right"></div>
+
+      <div className="particles">
+        {[...Array(60)].map((_, i) => (
+          <span
+            key={i}
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 10}s`,
+              animationDuration: `${8 + Math.random() * 10}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="spider">
+        🕷️
+      </div>
 
       <div className="hero-content">
         <img
@@ -29,7 +34,9 @@ function Home() {
           className="hero-logo"
         />
 
-        <h1 className="hero-title">LITCON</h1>
+        <h1 className="hero-title">
+          LITCON
+        </h1>
 
         <p className="hero-subtitle">
           Every Hero Has an Origin.
@@ -39,7 +46,8 @@ function Home() {
           <br />
           Welcome to LITCON,
           <br />
-          ENLIT Club's Spider-Verse of Literature and Technology.
+          ENLIT Club's Spider-Verse of
+          Literature and Technology.
         </p>
 
         <button className="hero-btn">
